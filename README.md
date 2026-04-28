@@ -147,13 +147,13 @@ awk '{if ($NF > 3000) print}' /tomcat/logs/localhost_access_log.$(date +%Y-%m-%d
 ```bash
 # 여러 인스턴스의 로그를 동시에 grep
 grep -nE "Exception|ERROR|SEVERE" \
-  /tomcat/tomcat-namgu{1,2}/logs/localhost.$(date +%Y-%m-%d).log \
+  /tomcat/tomcat-instance{1,2}/logs/localhost.$(date +%Y-%m-%d).log \
   | sort -t: -k2 | tail -50
 
 # 실시간으로 여러 인스턴스 동시 모니터링
 tail -f \
-  /tomcat/tomcat-namgu1/logs/localhost.$(date +%Y-%m-%d).log \
-  /tomcat/tomcat-namgu2/logs/localhost.$(date +%Y-%m-%d).log
+  /tomcat/tomcat-instance1/logs/localhost.$(date +%Y-%m-%d).log \
+  /tomcat/tomcat-instance2/logs/localhost.$(date +%Y-%m-%d).log
 ```
 
 ### 스택 트레이스 전체 보기
