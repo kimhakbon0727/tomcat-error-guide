@@ -70,8 +70,8 @@ java.lang.NullPointerException
 ```bash
 # 오늘 날짜의 오류 마지막 50줄 확인
 grep -nE "Exception|ERROR|SEVERE" \
-  /tomcat/tomcat-namgu1/logs/localhost.$(date +%Y-%m-%d).log \
-  /tomcat/tomcat-namgu2/logs/localhost.$(date +%Y-%m-%d).log | tail -50
+  /tomcat/tomcat-instance1/logs/localhost.$(date +%Y-%m-%d).log \
+  /tomcat/tomcat-instance2/logs/localhost.$(date +%Y-%m-%d).log | tail -50
 
 # 특정 날짜 확인
 grep -nE "Exception|ERROR|SEVERE" \
